@@ -7,7 +7,7 @@ on:
   push:
     branches: [ production ]
     paths:
-      - 'src/${env.PACKAGE_NAME}/**/*'
+      - 'src/Noldova.AI.Parsers.Text/**/*'
       - '.github/workflows/deploy-nuget.yml'
 
 permissions:
