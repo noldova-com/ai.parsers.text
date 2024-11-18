@@ -1,0 +1,36 @@
+name: Deploy package to NuGet.org
+
+env:
+  PACKAGE_NAME: 'Noldova.AI.Parsers.Text'
+
+on:
+  push:
+    branches:
+      - production
+    paths:
+      - 'src/${env.PACKAGE_NAME}/**/*'
+      - '.github/workflows/deploy-nuget.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Setup .NET 8.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '8.0'
+        include-prerelease: True
+    - uses: actions/checkout@v2
+    - name: Build
+      run: dotnet build src/${{env.PACKAGE_NAME}}/${{env.PACKAGE_NAME}}.csproj --configuration Release
+    - name: Pack
+      run: dotnet pack src/${{env.PACKAGE_NAME}}/${{env.PACKAGE_NAME}}.csproj --configuration Release
+    - name: Push to NuGet.org
+      run: dotnet nuget push "./src/${{env.PACKAGE_NAME}}/bin/Release/*.nupkg" --skip-duplicate -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET}}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
