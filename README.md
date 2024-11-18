@@ -4,7 +4,8 @@ This repository contains the text parser for NoldovaAI
 
 This package is part of NoldovaAI. Use it separately only if you want to parse a given text into a list of unique names.
 
-![NuGet Version](https://img.shields.io/nuget/v/Noldova.AI.Parsers.Text)
+![NuGet Version](https://img.shields.io/nuget/v/Noldova.AI.Parsers.Text?link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FNoldova.AI.Parsers.Text%2F)
+
 
 ### Installation
 
