@@ -5,8 +5,7 @@ env:
 
 on:
   push:
-    branches:
-      - production
+    branches: [ production ]
     paths:
       - 'src/${env.PACKAGE_NAME}/**/*'
       - '.github/workflows/deploy-nuget.yml'
