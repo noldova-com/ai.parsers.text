@@ -8,7 +8,7 @@
     <Copyright>Noldova</Copyright>
     <PackageIcon>logo.png</PackageIcon>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/noldova-com/ai.parsers.text</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
